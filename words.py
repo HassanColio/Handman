@@ -1,0 +1,1 @@
+palabras = ['salio sol','yolo','goodword']
