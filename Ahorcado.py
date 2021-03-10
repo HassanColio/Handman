@@ -11,9 +11,9 @@ def get_valid_word(palabras):
 
     return word
 
-print(get_valid_word(palabras))
+for i in get_valid_word(palabras):
+    print (" _ ",end="")
 
-my_word = get_valid_word(palabras)
-print (my_word+ '/n', len(my_word))
+print("")
 
     
