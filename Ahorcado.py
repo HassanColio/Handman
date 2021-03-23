@@ -1,19 +1,24 @@
 from words import palabras
+import colorama
+from colorama import Fore,init
+init()
 import random
+colors = list(vars(colorama.Fore).values())
 
-print("Welcome to the game hangman in Python")
+print("Welcome to the Hangman game, let's play")
+print("Guess the word of parse")
 
-def get_valid_word(palabras):
-    word = random.choice(palabras)
+def good_words(words):
+    word = random.choice(words)
+    while '-' in word or ' ' in word:
+        word = random.choice(words)
+        return word
 
-    while '-' in palabras or ' ' in word :
-        word = random.choice(palabras)
+word = good_words(palabras)
 
-    return word
 
-for i in get_valid_word(palabras):
-    print (" _ ",end="")
+for i in word:
+    colored_chars = [random.choice(colors) + " _ "]
+    print(" ".join(colored_chars),end="")
 
 print("")
-
-    
