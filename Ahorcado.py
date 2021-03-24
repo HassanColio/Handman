@@ -5,8 +5,8 @@ init()
 import random
 colors = list(vars(colorama.Fore).values())
 
-print("Welcome to the Hangman game, let's play")
-print("Guess the word of parse")
+print("Bienvenidos al juego")
+
 
 def good_words(words):
     word = random.choice(words)
