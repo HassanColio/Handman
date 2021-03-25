@@ -1,5 +1,5 @@
 from words import palabras
-from hangman import lives_pic
+from hangman import asciiArt
 import colorama
 from colorama import Fore,init
 init()
@@ -45,7 +45,7 @@ while count_letters > 0 or vidas ==6:
         else:
             count_letters = count_letters - cont
 
-        print(lives_pic[vidas])
+        print(asciiArt[vidas])
         if vidas == 6:
             print("Perdiste")
             break
