@@ -13,7 +13,7 @@ def good_words(words):
     word = random.choice(words)
     while '-' in word or ' ' in word:
         word = random.choice(words)
-        return word
+    return word
 
 
 word = good_words(palabras).upper()
@@ -22,9 +22,7 @@ count_letters = len(word_list) #Cant de letras a adivinar
 
 
 while count_letters > 0 or vidas ==6:
-    print("Guess the word or phrase")
-
-    print(word_list)
+    print("Guess the word or phrase")   
     for i in word_list:
         if i.isupper():
             colored_chars = [random.choice(colors)+ " _ " ]
