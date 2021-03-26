@@ -47,10 +47,12 @@ while count_letters > 0 or vidas ==6:
 
         print(asciiArt[vidas])
         if vidas == 6:
-            print("Perdiste")
+            print("Perdiste, la palabra era :")
+            print(word_list)
             break
 
         if count_letters == 0:
             print("Ganaste")
+            print(word_list)
     else:
         print("Caracter invalido, intenta de nuevo")
