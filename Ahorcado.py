@@ -1,13 +1,7 @@
 from words import palabras
 from hangman import asciiArt
-import colorama
-from colorama import Fore,init
-init()
 import random
 import os
-colors = list(vars(colorama.Fore).values())
-
-
 
 def good_words(words):
     word = random.choice(words)
@@ -21,13 +15,13 @@ word_list = list(word) #Separa letras metiendolas en una lista
 count_letters = len(word_list) #Cant de letras a adivinar
 
 vidas = 0
-while count_letters > 0 or vidas == 0:
+while count_letters > 0 or vidas == 6:
     
     print("Veremos si puedes adivinar la palabra 🤔")   
     for i in word_list:
         if i.isupper():
-            colored_chars = [random.choice(colors)+ " _ " ]
-            print(" ".join(colored_chars),end="")
+            
+            print(" _ ", end="")
 
         else:
             print(i,end="")
@@ -44,9 +38,6 @@ while count_letters > 0 or vidas == 0:
                 cont = cont + 1
         if cont == 0:
             vidas = vidas + 1
-
-            
-            
         else:
             count_letters = count_letters - cont
 
