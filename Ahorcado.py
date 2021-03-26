@@ -4,9 +4,9 @@ import colorama
 from colorama import Fore,init
 init()
 import random
+import os
 colors = list(vars(colorama.Fore).values())
-vidas = 0
-print("Bienvenidos al juego")
+
 
 
 def good_words(words):
@@ -17,13 +17,13 @@ def good_words(words):
 
 
 word = good_words(palabras).upper()
-word_list = list(word) #Separa lestras dentro de una list
+word_list = list(word) #Separa letras metiendolas en una lista
 count_letters = len(word_list) #Cant de letras a adivinar
 
-
-while count_letters > 0 or vidas ==6:
+vidas = 0
+while count_letters > 0 or vidas == 0:
     
-    print("Guess the word or phrase")   
+    print("Veremos si puedes adivinar la palabra 🤔")   
     for i in word_list:
         if i.isupper():
             colored_chars = [random.choice(colors)+ " _ " ]
@@ -37,25 +37,30 @@ while count_letters > 0 or vidas ==6:
     letter = input("\nLetter :").upper() 
     if letter.isalpha() and len(letter) == 1:
         cont = 0
+        
         for i in range(len(word_list)):
             if letter == word_list[i]:
                 word_list[i] = letter.lower()
                 cont = cont + 1
         if cont == 0:
             vidas = vidas + 1
-            kha = 6 - vidas
-            print(f"lives {kha} ")
+
+            
+            
         else:
             count_letters = count_letters - cont
 
-        print(asciiArt[vidas])
+        print(asciiArt[vidas])   #RECORRER LA LISTA USANDO ITERADOR PARA EL MONITO
         if vidas == 6:
-            print("Perdiste, la palabra era :")
-            print(word_list)
+            os.system ("cls") #Limpiar pantalla
+            print("Perdiste 👀, la palabra era :")
+            print(word_list)  # Imprimir la palabra que era correcta
             break
 
         if count_letters == 0:
-            print("Ganaste")
-            print(word_list)
+            os.system ("cls") # limpiar pantalla
+            print("Ganaste 🎿 ")
+            print(word_list)   # Imprimir la palabra
+            
     else:
         print("Caracter invalido, intenta de nuevo")
