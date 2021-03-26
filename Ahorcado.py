@@ -22,6 +22,7 @@ count_letters = len(word_list) #Cant de letras a adivinar
 
 
 while count_letters > 0 or vidas ==6:
+    
     print("Guess the word or phrase")   
     for i in word_list:
         if i.isupper():
@@ -42,6 +43,8 @@ while count_letters > 0 or vidas ==6:
                 cont = cont + 1
         if cont == 0:
             vidas = vidas + 1
+            kha = 6 - vidas
+            print(f"lives {kha} ")
         else:
             count_letters = count_letters - cont
 
